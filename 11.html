@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.important{font-weight:bold;font-size:xx-large;}
+.blue{color:blue;}
+.undis{display: none;}
+.red{color: red;}
+.zhs .dis{display: block;}
+.zhs{width: 300px;height: 200px;}
+.tit{width: 300px;height: 30px;}
+.tit a{width: 60px;height: 30px;display: block;float: left;}
+.zhs p{display: none;}
+</style>
+<script src="http://cdn.bootcss.com/jquery/2.1.1-rc2/jquery.js"></script>
+ 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			$('h2').addClass('undis');
+			$('.red').removeClass('red');
+		});
+
+		$('.tit a').hover(function(){
+			$(this).addClass('blue');
+			$('.zhs p').hide();
+			$(".zhs p:eq("+$(this).index()+")").show();
+		});
+		 
+
+	});
+
+</script>
+
+</head>
+<body>
+<h1>标题 1</h1>
+<h2>标题 2</h2>
+<p>这是一个段落。</p>
+<p class="red">这是另一个段落。</p>
+<div>这是非常重要的文本！</div>
+<br>
+<button>向元素添加类</button>
+
+<div class="zhs">
+	<div class="tit">
+		<a href="#">haha1</a>
+		<a href="#">haha2</a>
+		<a href="#">haha3</a>
+	</div>
+	<p class="dis">ss1</p>
+	<p>ss2</p>
+	<p>ss3</p>
+</div>
+<div></div>
+
+</body>
+</html>
